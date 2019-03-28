@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+
+    
+
+    <!--配置测试用，创建并删除。数据库必须为空！-->
+    <!--<property name="databaseSchemaUpdate" value="create-drop"/>-->
+    <property name="databaseSchemaUpdate" value="true"/>
+
+    <property name="dataSource" ref="dataSource"/>
+
+    <!--是否使用历史数据-->
+    <property name="dbHistoryUsed" value="true"/>
+    <!--是否需要身份-->
+    <property name="dbIdentityUsed" value="true"/>
+    <!--表名约束-->
+    <!--<property name="databaseTablePrefix" value="_hand"/>-->
+    <!--数据源类型-->
+    <!--<property name="databaseType" value="mysql"/>-->
+
+
+  </bean>
+
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+
+    <property name="url" value="jdbc:mysql://localhost:3306/activiti6test?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"/>
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="username" value="root"/>
+    <property name="password" value="root"/>
+    <property name="initialSize" value="1"/>
+    <property name="maxActive" value="10"/>
+    <property name="filters" value="stat,slf4j"/>
+
+  </bean>
+
+
+
+</beans>

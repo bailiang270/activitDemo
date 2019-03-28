@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+    <!--<property name="commandInvoker" ref="commandInvoker"/>-->
+    <!--<property name="enableDatabaseEventLogging" value="true"/>-->
+
+    <!--<property name="eventListeners">-->
+      <!--<list>-->
+        <!--&lt;!&ndash;<bean class="liang.bai.activiti.event.ProcessEventListener"></bean>&ndash;&gt;-->
+        <!--<bean class="liang.bai.activiti.event.CustomEventListener"></bean>-->
+      <!--</list>-->
+    <!--</property>-->
+
+  </bean>
+
+
+  <!--<bean id="commandInvoker" class="liang.bai.activiti.interceptor.MDCcommandInvoker"/>-->
+
+
+
+</beans>
